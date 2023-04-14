@@ -8,7 +8,9 @@ var t = false
 var node = preload("res://popa.tscn")
 
 
+
 func _ready():
+
 	_timer = Timer.new()
 	add_child(_timer)
 
