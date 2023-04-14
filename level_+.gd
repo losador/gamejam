@@ -8,7 +8,6 @@ var t = false
 var node = preload("res://popa.tscn")
 
 
-
 func _ready():
 
 	_timer = Timer.new()
@@ -22,6 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_Timer_timeout():
 	spawn()
+
 	
 func spawn():
 	var node_ins = node.instantiate()

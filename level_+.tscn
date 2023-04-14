@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckpuv78ihgktu"]
+[gd_scene load_steps=12 format=3 uid="uid://ckpuv78ihgktu"]
 
 [ext_resource type="Script" path="res://level_+.gd" id="1_ew4y7"]
 [ext_resource type="Texture2D" uid="uid://dpf4hx7562yit" path="res://assets/Terrain/Terrain (16x16).png" id="1_my11a"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ceg3h6cup08q6" path="res://assets/background.png" id="2_r0g31"]
 [ext_resource type="Script" path="res://ParallaxBackground.gd" id="3_fg3jy"]
 [ext_resource type="Texture2D" uid="uid://dws3jpmdd8bjl" path="res://assets/vannna.png" id="4_7lpbm"]
-[ext_resource type="PackedScene" uid="uid://ytu74hynonty" path="res://popa.tscn" id="6_ver5u"]
 [ext_resource type="PackedScene" uid="uid://d37tiumy2oabv" path="res://control.tscn" id="7_qrbfg"]
 [ext_resource type="AudioStream" uid="uid://bhx8su66oc8oe" path="res://music/Duck_Toy.mp3" id="8_njrpo"]
 
@@ -519,9 +518,6 @@ autoplay = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_j4gbi")]
 position = Vector2(611, 331)
-
-[node name="popa" parent="." instance=ExtResource("6_ver5u")]
-position = Vector2(677, 386)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(655, 285)
