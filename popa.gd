@@ -8,7 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	print("WPOS", position.x)
-	if position.x < 410:
+	if not $AnimatedSprite2D.is_playing():
 		print("SDADASDASDASDASDAS")
 		queue_free()
 	velocity.x = -100

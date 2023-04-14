@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ytu74hynonty"]
+[gd_scene load_steps=21 format=3 uid="uid://ytu74hynonty"]
 
 [ext_resource type="Script" path="res://popa.gd" id="1_5ypkj"]
 [ext_resource type="Texture2D" uid="uid://do8hpgvwt3kye" path="res://Water Effect 01/Water Effect SpriteSheet/Water Splash 01 - Spritesheet.png" id="1_ifv4q"]
@@ -60,27 +60,7 @@ region = Rect2(132, 154, 66, 77)
 atlas = ExtResource("1_ifv4q")
 region = Rect2(198, 154, 66, 77)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1xmt6"]
-atlas = ExtResource("1_ifv4q")
-region = Rect2(264, 154, 66, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34dva"]
-atlas = ExtResource("1_ifv4q")
-region = Rect2(0, 231, 66, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipxoa"]
-atlas = ExtResource("1_ifv4q")
-region = Rect2(66, 231, 66, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmwhd"]
-atlas = ExtResource("1_ifv4q")
-region = Rect2(132, 231, 66, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ig8m"]
-atlas = ExtResource("1_ifv4q")
-region = Rect2(198, 231, 66, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lqqx2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj6od"]
 atlas = ExtResource("1_ifv4q")
 region = Rect2(264, 231, 66, 77)
 
@@ -130,22 +110,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0t8bi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1xmt6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_34dva")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ipxoa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gmwhd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ig8m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lqqx2")
+"texture": SubResource("AtlasTexture_xj6od")
 }],
 "loop": false,
 "name": &"idle",
@@ -163,7 +128,7 @@ script = ExtResource("1_5ypkj")
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_2hsac")
 animation = &"idle"
-frame = 19
+frame = 14
 frame_progress = 1.0
 speed_scale = 3.0
 

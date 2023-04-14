@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d37tiumy2oabv"]
+[gd_scene load_steps=5 format=3 uid="uid://d37tiumy2oabv"]
 
-[ext_resource type="Script" path="res://Label.gd" id="1_d86ig"]
+[ext_resource type="Script" path="res://control.gd" id="1_jisih"]
+[ext_resource type="Script" path="res://score.gd" id="2_n1lso"]
+[ext_resource type="Script" path="res://coins.gd" id="3_u4aa0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_47jvv"]
 outline_size = 2
@@ -16,8 +18,9 @@ offset_top = 1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jisih")
 
-[node name="Label" type="Label" parent="."]
+[node name="score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 9.0
@@ -26,4 +29,19 @@ offset_bottom = 35.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_47jvv")
 uppercase = true
-script = ExtResource("1_d86ig")
+script = ExtResource("2_n1lso")
+
+[node name="coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 81.0
+offset_bottom = 72.0
+text = "Coins: 0"
+label_settings = SubResource("LabelSettings_47jvv")
+uppercase = true
+script = ExtResource("3_u4aa0")
+
+[connection signal="plus_coin" from="." to="coins" method="_on_control_plus_coin"]
+[connection signal="store" from="." to="score" method="_on_control_store"]
+[connection signal="store" from="." to="coins" method="_on_control_store"]

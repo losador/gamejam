@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckpuv78ihgktu"]
+[gd_scene load_steps=14 format=3 uid="uid://ckpuv78ihgktu"]
 
 [ext_resource type="Script" path="res://level_+.gd" id="1_ew4y7"]
 [ext_resource type="Texture2D" uid="uid://dpf4hx7562yit" path="res://assets/Terrain/Terrain (16x16).png" id="1_my11a"]
@@ -8,7 +8,9 @@
 [ext_resource type="Script" path="res://ParallaxBackground.gd" id="3_fg3jy"]
 [ext_resource type="Texture2D" uid="uid://dws3jpmdd8bjl" path="res://assets/vannna.png" id="4_7lpbm"]
 [ext_resource type="PackedScene" uid="uid://d37tiumy2oabv" path="res://control.tscn" id="7_qrbfg"]
-[ext_resource type="AudioStream" uid="uid://bhx8su66oc8oe" path="res://music/Duck_Toy.mp3" id="8_njrpo"]
+[ext_resource type="AudioStream" uid="uid://cjrclx67eikj2" path="res://music/stream-river-water-up-close-6061.mp3" id="8_ngyjr"]
+[ext_resource type="PackedScene" uid="uid://ced5ob0735cte" path="res://pause.tscn" id="10_ea0lt"]
+[ext_resource type="PackedScene" uid="uid://dtki4lkvaq5od" path="res://restart.tscn" id="11_88h2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uec8"]
 texture = ExtResource("1_my11a")
@@ -513,12 +515,29 @@ offset_bottom = 74.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_njrpo")
+stream = ExtResource("8_ngyjr")
+volume_db = 12.0
 autoplay = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_j4gbi")]
+[node name="player" parent="." instance=ExtResource("2_j4gbi")]
 position = Vector2(611, 331)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(655, 285)
 zoom = Vector2(1.45, 1.45)
+
+[node name="over" parent="." instance=ExtResource("11_88h2t")]
+visible = false
+z_index = 105
+position = Vector2(89, -6)
+
+[node name="pause" parent="." instance=ExtResource("10_ea0lt")]
+visible = false
+z_index = 100
+position = Vector2(-19, -56)
+
+[connection signal="coin" from="player" to="Control" method="_on_player_coin"]
+[connection signal="die" from="player" to="." method="_on_character_body_2d_die"]
+[connection signal="die" from="player" to="Control" method="_on_player_die"]
+[connection signal="restart" from="over" to="." method="_on_over_restart"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]

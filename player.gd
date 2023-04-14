@@ -4,13 +4,15 @@ const SPEED = 100
 var target_position = Vector2()
 var target_y = position.y
 
+
 var killed = false; 
 signal die
+signal coin
 
 func map(x, in_min, in_max, out_min, out_max):
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 func _ready():
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("idle1")
 func _physics_process(delta):
 	if killed == true:
 		return
@@ -33,4 +35,7 @@ func kill():
 	emit_signal("die")
 	$AnimatedSprite2D.play("die")
 	killed = true
+	
+func coin_get():
+	emit_signal("coin")
 
