@@ -15,6 +15,7 @@ func _ready():
 		file = FileAccess.open("userdata.json", FileAccess.WRITE)
 
 		file.store_line(JSON.new().stringify(data))
+	file = FileAccess.open("userdata.json", FileAccess.READ)
 	var content = file.get_as_text()
 	content = JSON.new().parse_string(content) 
 	mode = content["mode"]
