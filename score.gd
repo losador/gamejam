@@ -4,7 +4,9 @@ extends Label
 var score = 0
 var th = 0
 var is_stop = false
+var is_boosted = false
 signal thousand
+signal boosted
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta):
@@ -13,6 +15,10 @@ func _process(delta):
 			emit_signal("thousand")
 		score += 1
 		text = "Score: %s" % score
+		if score == 200:
+			if is_boosted == false:
+				emit_signal("boosted")
+				is_boosted = true
 
 
 

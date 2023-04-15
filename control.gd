@@ -2,6 +2,7 @@ extends Control
 
 signal store
 signal expand
+signal boosted
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -28,3 +29,7 @@ func _on_pause_store():
 
 func _on_score_thousand():
 	emit_signal("expand") # Replace with function body.
+
+
+func _on_score_boosted():
+	emit_signal("boosted") # Replace with function body.

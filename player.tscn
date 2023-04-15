@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dra7sr6l11c25"]
+[gd_scene load_steps=47 format=3 uid="uid://dra7sr6l11c25"]
 
 [ext_resource type="Script" path="res://player.gd" id="2_5i5ca"]
 [ext_resource type="Texture2D" uid="uid://ximan7c3264a" path="res://assets/Ducks/devil.png" id="2_80645"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dwhieiwrgml1w" path="res://assets/Ducks/knify.png" id="5_u8aur"]
 [ext_resource type="Texture2D" uid="uid://dm6wlndvuysmn" path="res://assets/Ducks/idle.png" id="6_rs0o8"]
 [ext_resource type="Texture2D" uid="uid://den60ongvva34" path="res://assets/Ducks/knifysa.png" id="6_rt6j3"]
+[ext_resource type="AudioStream" uid="uid://b7v2wksuhskx2" path="res://music/8269f7d65aa99a3.mp3" id="10_5jvda"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbnvf"]
 atlas = ExtResource("2_80645")
@@ -312,9 +313,12 @@ script = ExtResource("2_5i5ca")
 position = Vector2(-3, 1)
 rotation = 0.00122616
 sprite_frames = SubResource("SpriteFrames_w0s60")
-animation = &"hatty_up"
+animation = &"knify"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -4)
+position = Vector2(-3, 1)
 shape = SubResource("CircleShape2D_ft6n5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_5jvda")

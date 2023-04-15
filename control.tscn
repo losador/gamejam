@@ -50,4 +50,5 @@ script = ExtResource("3_u4aa0")
 [connection signal="plus_coin" from="." to="coins" method="_on_control_plus_coin"]
 [connection signal="store" from="." to="score" method="_on_control_store"]
 [connection signal="store" from="." to="coins" method="_on_control_store"]
+[connection signal="boosted" from="score" to="." method="_on_score_boosted"]
 [connection signal="thousand" from="score" to="." method="_on_score_thousand"]

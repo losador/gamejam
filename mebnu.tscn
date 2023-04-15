@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvm1071juhpl6"]
+[gd_scene load_steps=18 format=3 uid="uid://cvm1071juhpl6"]
 
 [ext_resource type="Script" path="res://mebnu.gd" id="1_dqajj"]
 [ext_resource type="Script" path="res://Button.gd" id="1_rdg7m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://beudi8ehjdn6d" path="res://assets/quit_button.png" id="7_h21w8"]
 [ext_resource type="Script" path="res://Label2.gd" id="9_57w5g"]
 [ext_resource type="Script" path="res://skin.gd" id="10_bchll"]
+[ext_resource type="Script" path="res://CheckButton.gd" id="11_6xd6u"]
 
 [sub_resource type="Theme" id="Theme_cmpal"]
 Button/styles/normal = null
@@ -31,6 +32,11 @@ font = ExtResource("5_tkhur")
 font_size = 30
 font_color = Color(0.964706, 0.776471, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ohd1v"]
+font = ExtResource("5_tkhur")
+font_size = 30
+font_color = Color(0.964706, 0.776471, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dqajj")
 
@@ -44,9 +50,9 @@ position = Vector2(584, 336)
 
 [node name="start" type="Button" parent="."]
 offset_left = 296.0
-offset_top = 224.0
+offset_top = 256.0
 offset_right = 552.0
-offset_bottom = 279.0
+offset_bottom = 311.0
 theme = SubResource("Theme_cmpal")
 icon = ExtResource("2_8oatx")
 icon_alignment = 1
@@ -68,17 +74,17 @@ script = ExtResource("3_obr8v")
 
 [node name="skin" type="Button" parent="."]
 offset_left = 296.0
-offset_top = 296.0
+offset_top = 328.0
 offset_right = 552.0
-offset_bottom = 352.0
+offset_bottom = 384.0
 icon = ExtResource("6_rvnpy")
 icon_alignment = 1
 
 [node name="quit" type="Button" parent="."]
 offset_left = 296.0
-offset_top = 368.0
+offset_top = 400.0
 offset_right = 552.0
-offset_bottom = 424.0
+offset_bottom = 456.0
 icon = ExtResource("7_h21w8")
 icon_alignment = 1
 
@@ -100,6 +106,22 @@ text = "Current Skin:"
 label_settings = SubResource("LabelSettings_tve7u")
 script = ExtResource("10_bchll")
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 184.0
+offset_right = 456.0
+offset_bottom = 229.0
+text = "Hard mode:"
+label_settings = SubResource("LabelSettings_ohd1v")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 456.0
+offset_top = 192.0
+offset_right = 500.0
+offset_bottom = 224.0
+script = ExtResource("11_6xd6u")
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="skin" to="." method="_on_skin_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
