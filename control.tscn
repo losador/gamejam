@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d37tiumy2oabv"]
+[gd_scene load_steps=6 format=3 uid="uid://d37tiumy2oabv"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_jisih"]
 [ext_resource type="Script" path="res://score.gd" id="2_n1lso"]
+[ext_resource type="FontFile" uid="uid://ddysjql4w8mc1" path="res://fonts/caliper-unicase.ttf" id="2_vjjqw"]
 [ext_resource type="Script" path="res://coins.gd" id="3_u4aa0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_47jvv"]
+font = ExtResource("2_vjjqw")
+font_size = 25
+font_color = Color(0.964706, 0.776471, 0, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.890196)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -45,3 +50,4 @@ script = ExtResource("3_u4aa0")
 [connection signal="plus_coin" from="." to="coins" method="_on_control_plus_coin"]
 [connection signal="store" from="." to="score" method="_on_control_store"]
 [connection signal="store" from="." to="coins" method="_on_control_store"]
+[connection signal="thousand" from="score" to="." method="_on_score_thousand"]

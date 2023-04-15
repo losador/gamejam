@@ -1,0 +1,197 @@
+[gd_scene load_steps=17 format=3 uid="uid://ehchte5abry1"]
+
+[ext_resource type="Texture2D" uid="uid://dwjsjixnof66x" path="res://assets/menu_background.png" id="1_37bag"]
+[ext_resource type="Script" path="res://skins.gd" id="1_coakm"]
+[ext_resource type="FontFile" uid="uid://ddysjql4w8mc1" path="res://fonts/caliper-unicase.ttf" id="3_6ehhh"]
+[ext_resource type="Script" path="res://defaultbut.gd" id="4_2jy3c"]
+[ext_resource type="Texture2D" uid="uid://c6m0ktl5ajqj1" path="res://assets/Ducks/idleic.png" id="4_k2n6u"]
+[ext_resource type="Script" path="res://buykn.gd" id="4_lck0p"]
+[ext_resource type="Texture2D" uid="uid://cwj2166koodmk" path="res://assets/Ducks/knifyic.png" id="5_opq4j"]
+[ext_resource type="Texture2D" uid="uid://clngyqg8wuu4d" path="res://assets/Ducks/hattyic.png" id="7_o2mfy"]
+[ext_resource type="Script" path="res://buyhaty.gd" id="8_ncqjy"]
+[ext_resource type="Texture2D" uid="uid://dvwfyb1g43xq7" path="res://assets/Ducks/devilic.png" id="9_7kbxf"]
+[ext_resource type="Script" path="res://Button.gd" id="10_uu6ay"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5au1o"]
+font = ExtResource("3_6ehhh")
+font_size = 33
+font_color = Color(0.964706, 0.776471, 0, 1)
+
+[sub_resource type="Theme" id="Theme_eaiga"]
+default_font = ExtResource("3_6ehhh")
+Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
+
+[sub_resource type="Theme" id="Theme_ik1uc"]
+default_font = ExtResource("3_6ehhh")
+Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+
+[sub_resource type="Theme" id="Theme_wfjql"]
+default_font = ExtResource("3_6ehhh")
+Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jrhwf"]
+default_font = ExtResource("3_6ehhh")
+Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_coakm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(585, 336)
+scale = Vector2(0.731, 0.698)
+texture = ExtResource("1_37bag")
+
+[node name="defult" type="ColorRect" parent="."]
+offset_left = 264.0
+offset_top = 40.0
+offset_right = 480.0
+offset_bottom = 280.0
+color = Color(0.34902, 0.34902, 0.34902, 0.682353)
+
+[node name="Label" type="Label" parent="defult"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 190.0
+offset_bottom = 50.0
+text = "Default"
+label_settings = SubResource("LabelSettings_5au1o")
+
+[node name="default_butt" type="Button" parent="defult"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 160.0
+offset_bottom = 232.0
+theme = SubResource("Theme_eaiga")
+text = "Choose
+"
+script = ExtResource("4_2jy3c")
+
+[node name="TextureRect" type="TextureRect" parent="defult"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 192.0
+texture = ExtResource("4_k2n6u")
+expand_mode = 1
+
+[node name="knify" type="ColorRect" parent="."]
+offset_left = 520.0
+offset_top = 40.0
+offset_right = 736.0
+offset_bottom = 280.0
+color = Color(0.34902, 0.34902, 0.34902, 0.682353)
+
+[node name="Label" type="Label" parent="knify"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 165.0
+offset_bottom = 50.0
+text = "Knify"
+label_settings = SubResource("LabelSettings_5au1o")
+
+[node name="TextureRect2" type="TextureRect" parent="knify"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 192.0
+texture = ExtResource("5_opq4j")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="knify"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 160.0
+offset_bottom = 232.0
+theme = SubResource("Theme_ik1uc")
+text = "Buy: 200"
+script = ExtResource("4_lck0p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(584, 336)
+
+[node name="hatty" type="ColorRect" parent="."]
+offset_left = 264.0
+offset_top = 368.0
+offset_right = 480.0
+offset_bottom = 608.0
+color = Color(0.34902, 0.34902, 0.34902, 0.682353)
+
+[node name="Label" type="Label" parent="hatty"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 171.0
+offset_bottom = 50.0
+text = "Hatty
+"
+label_settings = SubResource("LabelSettings_5au1o")
+
+[node name="TextureRect2" type="TextureRect" parent="hatty"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 192.0
+texture = ExtResource("7_o2mfy")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="hatty"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 160.0
+offset_bottom = 232.0
+theme = SubResource("Theme_wfjql")
+text = "Buy: 500"
+script = ExtResource("8_ncqjy")
+
+[node name="devil" type="ColorRect" parent="."]
+offset_left = 520.0
+offset_top = 368.0
+offset_right = 736.0
+offset_bottom = 608.0
+color = Color(0.34902, 0.34902, 0.34902, 0.682353)
+
+[node name="Label" type="Label" parent="devil"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 162.0
+offset_bottom = 50.0
+text = "Devil
+"
+label_settings = SubResource("LabelSettings_5au1o")
+
+[node name="TextureRect2" type="TextureRect" parent="devil"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 188.0
+texture = ExtResource("9_7kbxf")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="devil"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 192.0
+offset_right = 173.0
+offset_bottom = 232.0
+theme = SubResource("Theme_jrhwf")
+text = "99999 score"
+script = ExtResource("10_uu6ay")
+
+[connection signal="pressed" from="defult/default_butt" to="." method="_on_default_butt_pressed"]
+[connection signal="pressed" from="knify/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="hatty/Button" to="." method="_on_button_hatty_pressed"]

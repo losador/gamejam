@@ -15,10 +15,12 @@ func _on_control_plus_coin():
 
 
 func _on_control_store():
-	var s = FileAccess.open("coins.txt", FileAccess.READ)
-	if s == null:
-		return
-	var content = s.get_as_text()
-	s = FileAccess.open("coins.txt", FileAccess.WRITE)
-	s.store_line(str(coins + int(content)))
-	s.close()  # Replace with function body.
+	var s = FileAccess.open("userdata.json", FileAccess.READ)
+	var stored = s.get_line()
+	
+	var content = JSON.new().parse_string(stored)
+
+	var file = FileAccess.open("userdata.json", FileAccess.WRITE)
+	content["coins"] += coins
+	file.store_line(JSON.new().stringify(content))
+	file.close() # Replace with function body.

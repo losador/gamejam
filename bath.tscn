@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://bep22qcm4a00k"]
+
+[ext_resource type="Texture2D" uid="uid://m0cputqno5du" path="res://buublke/frame_0_delay-0.16s.png" id="1_7usxq"]
+[ext_resource type="Texture2D" uid="uid://currqdua41x16" path="res://buublke/frame_1_delay-0.16s.png" id="2_fopbi"]
+[ext_resource type="Texture2D" uid="uid://1ga2xogagufa" path="res://buublke/frame_2_delay-0.16s.png" id="3_14mty"]
+[ext_resource type="Texture2D" uid="uid://c62dai8akhtm3" path="res://buublke/frame_3_delay-0.16s.png" id="4_bdpjc"]
+[ext_resource type="Texture2D" uid="uid://sdhtkrt5ovq2" path="res://buublke/frame_4_delay-0.16s.png" id="5_t43cs"]
+[ext_resource type="Texture2D" uid="uid://dkft4m76t6mdp" path="res://buublke/frame_5_delay-0.16s.png" id="6_vd2aw"]
+[ext_resource type="Texture2D" uid="uid://cme6y2ae1ew2m" path="res://buublke/frame_6_delay-0.16s.png" id="7_4vk45"]
+[ext_resource type="Texture2D" uid="uid://bf1jfnttnu313" path="res://buublke/frame_7_delay-0.16s.png" id="8_wlo7n"]
+[ext_resource type="Texture2D" uid="uid://d063yvxcbksq" path="res://buublke/frame_8_delay-0.16s.png" id="9_whscj"]
+[ext_resource type="PackedScene" uid="uid://bp521gq4ibc5o" path="res://kitten.tscn" id="10_uvtmk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htvk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7usxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fopbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_14mty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bdpjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t43cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vd2aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4vk45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wlo7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whscj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-232, -132)
+scale = Vector2(0.625, 0.633333)
+sprite_frames = SubResource("SpriteFrames_htvk2")
+autoplay = "default"
+frame_progress = 0.713573
+speed_scale = 0.3
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("10_uvtmk")]
+position = Vector2(-400, -304)
+rotation = 0.0411295

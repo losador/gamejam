@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100
+const SPEED = 200
 var target_position = Vector2()
 var target_y = position.y
 
@@ -9,10 +9,19 @@ var killed = false;
 signal die
 signal coin
 
+var cur_skin
+
+func _ready():
+	var file = FileAccess.open("userdata.json", FileAccess.READ)
+	var content = file.get_line()
+	content = JSON.new().parse_string(content)
+	cur_skin = content["skin"]
+	$AnimatedSprite2D.play(cur_skin)
+	file.close()
+
 func map(x, in_min, in_max, out_min, out_max):
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
-func _ready():
-	$AnimatedSprite2D.play("idle1")
+	
 func _physics_process(delta):
 	if killed == true:
 		return
@@ -33,7 +42,7 @@ func _physics_process(delta):
 	
 func kill():
 	emit_signal("die")
-	$AnimatedSprite2D.play("die")
+	$AnimatedSprite2D.play("die_" + cur_skin)
 	killed = true
 	
 func coin_get():

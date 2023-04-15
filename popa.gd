@@ -7,13 +7,12 @@ func _ready():
 		
 
 func _physics_process(delta):
-	print("WPOS", position.x)
 	if not $AnimatedSprite2D.is_playing():
-		print("SDADASDASDASDASDAS")
 		queue_free()
 	velocity.x = -100
 	move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
-	body.kill() # Replace with function body.
+	if $AnimatedSprite2D.frame > 1:
+		body.kill() # Replace with function body.

@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvm1071juhpl6"]
+[gd_scene load_steps=16 format=3 uid="uid://cvm1071juhpl6"]
 
 [ext_resource type="Script" path="res://mebnu.gd" id="1_dqajj"]
 [ext_resource type="Script" path="res://Button.gd" id="1_rdg7m"]
-[ext_resource type="Texture2D" uid="uid://b3i6cvgqcqiek" path="res://assets/start_button.png" id="2_8oatx"]
-[ext_resource type="Texture2D" uid="uid://b4n6i0d1udcu5" path="res://assets/menu_background.png" id="2_tkkox"]
+[ext_resource type="Texture2D" uid="uid://cg3locahbycy2" path="res://assets/start_button.png" id="2_8oatx"]
+[ext_resource type="Texture2D" uid="uid://dwjsjixnof66x" path="res://assets/menu_background.png" id="2_tkkox"]
 [ext_resource type="Script" path="res://bscore.gd" id="3_obr8v"]
 [ext_resource type="FontFile" uid="uid://ddysjql4w8mc1" path="res://fonts/caliper-unicase.ttf" id="5_tkhur"]
-[ext_resource type="Texture2D" uid="uid://c1yc0wawkcxfp" path="res://assets/skin_button.png" id="6_rvnpy"]
-[ext_resource type="Texture2D" uid="uid://d4kkrfpsib6cs" path="res://assets/quit_button.png" id="7_h21w8"]
+[ext_resource type="Texture2D" uid="uid://dryvfp3c3xd0f" path="res://assets/skin_button.png" id="6_rvnpy"]
+[ext_resource type="Texture2D" uid="uid://beudi8ehjdn6d" path="res://assets/quit_button.png" id="7_h21w8"]
 [ext_resource type="Script" path="res://Label2.gd" id="9_57w5g"]
+[ext_resource type="Script" path="res://skin.gd" id="10_bchll"]
 
 [sub_resource type="Theme" id="Theme_cmpal"]
 Button/styles/normal = null
@@ -17,24 +18,29 @@ Button/styles/normal = null
 
 [sub_resource type="LabelSettings" id="LabelSettings_k5qb7"]
 font = ExtResource("5_tkhur")
-font_size = 37
+font_size = 30
 font_color = Color(0.964706, 0.776471, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yhxfw"]
 font = ExtResource("5_tkhur")
-font_size = 37
+font_size = 30
+font_color = Color(0.964706, 0.776471, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tve7u"]
+font = ExtResource("5_tkhur")
+font_size = 30
 font_color = Color(0.964706, 0.776471, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dqajj")
 
 [node name="Kkkk" type="Sprite2D" parent="."]
-position = Vector2(578, 324)
-scale = Vector2(0.7175, 0.687234)
+position = Vector2(585, 336)
+scale = Vector2(0.73125, 0.697872)
 texture = ExtResource("2_tkkox")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(580, 325)
+position = Vector2(584, 336)
 
 [node name="start" type="Button" parent="."]
 offset_left = 296.0
@@ -85,6 +91,15 @@ text = "coins: 0"
 label_settings = SubResource("LabelSettings_yhxfw")
 script = ExtResource("9_57w5g")
 
-[connection signal="pressed" from="start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="start" to="start" method="_on_pressed"]
+[node name="Label3" type="Label" parent="."]
+offset_left = 672.0
+offset_top = 72.0
+offset_right = 973.0
+offset_bottom = 128.0
+text = "Current Skin:"
+label_settings = SubResource("LabelSettings_tve7u")
+script = ExtResource("10_bchll")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="skin" to="." method="_on_skin_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -3,10 +3,16 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var file = FileAccess.open("score.txt", FileAccess.READ)
+	var file = FileAccess.open("userdata.json", FileAccess.READ)
+
+	if file == null:
+		return
 	var content = file.get_line()
-	print(content)
-	text = "Best score: %s" % content if content != null else 0 # Replace with function body.
+	
+	content = JSON.new().parse_string(content)
+
+	
+	text = "Best Score: %s" % content["score"] 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous fra
