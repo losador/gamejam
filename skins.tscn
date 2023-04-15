@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ehchte5abry1"]
+[gd_scene load_steps=18 format=3 uid="uid://ehchte5abry1"]
 
 [ext_resource type="Texture2D" uid="uid://dwjsjixnof66x" path="res://assets/menu_background.png" id="1_37bag"]
 [ext_resource type="Script" path="res://skins.gd" id="1_coakm"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://clngyqg8wuu4d" path="res://assets/Ducks/hattyic.png" id="7_o2mfy"]
 [ext_resource type="Script" path="res://buyhaty.gd" id="8_ncqjy"]
 [ext_resource type="Texture2D" uid="uid://dvwfyb1g43xq7" path="res://assets/Ducks/devilic.png" id="9_7kbxf"]
-[ext_resource type="Script" path="res://Button.gd" id="10_uu6ay"]
+[ext_resource type="Script" path="res://devilbutt.gd" id="11_35073"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5au1o"]
 font = ExtResource("3_6ehhh")
@@ -37,6 +37,12 @@ Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
 Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
 
 [sub_resource type="Theme" id="Theme_jrhwf"]
+default_font = ExtResource("3_6ehhh")
+Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
+Button/colors/font_pressed_color = Color(0.964706, 0.776471, 0, 1)
+
+[sub_resource type="Theme" id="Theme_wlr3x"]
 default_font = ExtResource("3_6ehhh")
 Button/colors/font_color = Color(0.964706, 0.776471, 0, 1)
 Button/colors/font_hover_color = Color(0.964706, 0.776471, 0, 1)
@@ -190,8 +196,18 @@ offset_right = 173.0
 offset_bottom = 232.0
 theme = SubResource("Theme_jrhwf")
 text = "99999 score"
-script = ExtResource("10_uu6ay")
+script = ExtResource("11_35073")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1008.0
+offset_top = 40.0
+offset_right = 1144.0
+offset_bottom = 80.0
+theme = SubResource("Theme_wlr3x")
+text = "Back"
 
 [connection signal="pressed" from="defult/default_butt" to="." method="_on_default_butt_pressed"]
 [connection signal="pressed" from="knify/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hatty/Button" to="." method="_on_button_hatty_pressed"]
+[connection signal="pressed" from="devil/Button" to="." method="_on_button_devil_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_back_pressed"]

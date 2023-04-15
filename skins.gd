@@ -79,3 +79,7 @@ func _on_button_devil_pressed():
 		file.store_string(JSON.new().stringify(content))
 		$knify/Button.text = "OK"
 	file.close()
+
+
+func _on_button_back_pressed():
+	get_tree().change_scene_to_file("res://mebnu.tscn") # Replace with function body.
