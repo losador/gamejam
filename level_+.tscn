@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckpuv78ihgktu"]
+[gd_scene load_steps=15 format=3 uid="uid://ckpuv78ihgktu"]
 
 [ext_resource type="Script" path="res://level_+.gd" id="1_ew4y7"]
 [ext_resource type="Texture2D" uid="uid://dpf4hx7562yit" path="res://assets/Terrain/Terrain (16x16).png" id="1_my11a"]
@@ -357,6 +357,15 @@ font_color = Color(0.964706, 0, 0, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rxytr"]
+font = ExtResource("10_oabjm")
+font_size = 18
+font_color = Color(0.964706, 0.776471, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
 [node name="level1" type="Node2D"]
 script = ExtResource("1_ew4y7")
 metadata/_edit_vertical_guides_ = [2715.0]
@@ -418,6 +427,15 @@ offset_bottom = 118.0
 text = "boost is available now: left mouse click"
 label_settings = SubResource("LabelSettings_m8qf5")
 
+[node name="timer" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 208.0
+offset_right = 485.0
+offset_bottom = 237.0
+text = "collect coin: 15 sec"
+label_settings = SubResource("LabelSettings_rxytr")
+
+[connection signal="coin" from="player" to="." method="_on_player_coin"]
 [connection signal="coin" from="player" to="Control" method="_on_player_coin"]
 [connection signal="die" from="player" to="." method="_on_character_body_2d_die"]
 [connection signal="die" from="player" to="Control" method="_on_player_die"]

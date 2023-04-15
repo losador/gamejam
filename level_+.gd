@@ -19,13 +19,15 @@ var coin_node = preload("res://coin.tscn")
 var is_dead = false
 var delay = 2.0
 var mode
+var is_coin_collected = false
+var coin_loop_started = true
 
 func _ready():
 	var file = FileAccess.open("userdata.json", FileAccess.READ)
 	var content = file.get_line()
 	content = JSON.new().parse_string(content)
 	mode = content["mode"]
-	
+	coin_timer()
 	_timer = Timer.new()
 	add_child(_timer)
 
@@ -42,8 +44,24 @@ func _ready():
 	_timer1.set_one_shot(false) # Make sure it loops
 	_timer1.start()
 	
+
+func coin_timer():
+	for i in range(15, -1, -1):
+		await get_tree().create_timer(1).timeout
+		$timer.text = "collect coin: %s sec" % i
+		if is_coin_collected:
+			break
+	if not is_coin_collected:
+		$player.kill()
+	else:
+		is_coin_collected = false
+		coin_loop_started = false
+	
 	
 func _process(float) -> void:
+	if coin_loop_started == false:
+		coin_loop_started = true
+		coin_timer()
 	if Input.is_action_pressed("pause") and !is_dead:
 		get_tree().paused = true
 
@@ -102,14 +120,14 @@ func spawn_coin():
 	node_ins.position = coords_coin.pick_random()
 
 func spawn_coin_second():
-	var middleSquare1X = randf_range(245, 1045)
-	var middleSquare1Y = randf_range(254, 382)
+	var middleSquare1X = randf_range(245, 1030)
+	var middleSquare1Y = randf_range(254, 370)
 
-	var middleSquare2X = randf_range(245, 490)
-	var middleSquare2Y = randf_range(254, 382)
+	var middleSquare2X = randf_range(245, 475)
+	var middleSquare2Y = randf_range(254, 370)
 
-	var middleSquare3X = randf_range(776, 954)
-	var middleSquare3Y = randf_range(202, 254)
+	var middleSquare3X = randf_range(776, 940)
+	var middleSquare3Y = randf_range(202, 240)
 
 	var positions = [
 		Vector2(middleSquare1X, middleSquare1Y),
@@ -139,8 +157,12 @@ func _on_control_expand():
 
 	
 func _on_control_boosted():
-	for i in range(10):
+	for i in range(5):
 		self.get_node("boost").show()
 		await get_tree().create_timer(1).timeout
 		self.get_node("boost").hide()
 		await get_tree().create_timer(1).timeout
+
+
+func _on_player_coin():
+	is_coin_collected = true # Replace with function body.

@@ -77,7 +77,7 @@ func _on_button_devil_pressed():
 		file = FileAccess.open("userdata.json", FileAccess.WRITE)
 		content["skin"] = "devil"
 		file.store_string(JSON.new().stringify(content))
-		$knify/Button.text = "OK"
+		$devil/Button.text = "OK"
 	file.close()
 
 
