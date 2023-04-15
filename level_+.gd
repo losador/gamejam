@@ -14,7 +14,7 @@ var coords_second = [
 var coords_coin = [Vector2(612, 277),Vector2(612, 302),Vector2(612, 299),Vector2(612, 385)]
 
 var t = false
-var node = preload("res://popa.tscn")
+var node = preload("res://whirlpool.tscn")
 var coin_node = preload("res://coin.tscn")
 var is_dead = false
 var delay = 2.0

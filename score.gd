@@ -15,7 +15,7 @@ func _process(delta):
 			emit_signal("thousand")
 		score += 1
 		text = "Score: %s" % score
-		if score == 1000:
+		if score == 10000:
 			if is_boosted == false:
 				emit_signal("boosted")
 				is_boosted = true
